@@ -1,0 +1,31 @@
+<!-- It was the first react tutorial, started from basics, and saw how react actually works, we included react in our file through links (not npm and stuff)  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">Header</div>
+    <div id="root">
+        <div class="element">Not Rendered</div>
+        <!-- * doesn't matters how many elements we have in this root here, everything will be over written by react, we won't even see this in our console.. root.render overwrites this root element! -->
+    </div>
+    <div id="footer">Footer</div>
+    <!-- This is the shortest react code...-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        // this is how we create an element using javaScript
+        // const heading = document.createElement("h1");
+        // heading.innerHTML = "Namaste JavaScript!";
+        // const root = document.getElementById("root");
+        // root.appendChild(heading);
+    </script>
+
+    <script src="index.js"></script>
+</body>
+</html>

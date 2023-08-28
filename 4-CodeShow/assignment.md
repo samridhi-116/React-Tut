@@ -1,0 +1,1 @@
+10. Why is react fast?
