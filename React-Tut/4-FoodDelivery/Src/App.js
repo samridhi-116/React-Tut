@@ -27,16 +27,16 @@ const AppLayout = () => {
         <> 
             {/* this is how we provide store to our entire app. */}
             <Provider store = {store}> 
-                <UserContext.Provider 
+                {/* <UserContext.Provider 
                     value={{
                         user: user,
                         setUser: setUser
-                    }}>
+                    }}> */}
                     <Header/>
                     {/* <Body /> */}
                     <Outlet/>
                     <Footer user={user}/> 
-                </UserContext.Provider>
+                {/* </UserContext.Provider> */}
             </Provider>
         </>
     )

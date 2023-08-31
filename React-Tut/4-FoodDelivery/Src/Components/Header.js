@@ -1,6 +1,6 @@
 //  This is a header component. containing Logo, and navbaar. CSS is done by external CSS.  
 //  We included title in header and then default exported header.
-import { useState,} from "react";
+import { useState} from "react";
 import logo from "../Assets/logo.png";
 // import offer from "../Components/Offer";
 import { Link } from "react-router-dom";
@@ -33,7 +33,8 @@ const Header = () => {
                     <p><Link to = "/help">Help</Link></p>
                     <p><Link to = "/cart">Cart-{cartItems.length}</Link></p>
                     {
-                        isLoggedIn ? <p>
+                        isLoggedIn ? 
+                            <p>
                                 <button className="register" onClick={()=>{
                                     setIsLoggedIn(false);
                                 }}>Sign out</button>                
