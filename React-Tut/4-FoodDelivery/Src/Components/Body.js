@@ -7,7 +7,6 @@ import { imgCDN, restaurantsInfo } from "../config";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { filterData } from "../utils/Helper"; 
 import useRestaurantData from "../utils/useRestaurants";
 import useOnline from "../utils/useOnline";
 import { IconContext } from "react-icons";
@@ -49,6 +48,7 @@ const Body = () => {
       <div className=" w-9/12 mx-auto my-4">
         <div className="flex flex-row my-4 w-1/2 mx-auto">
           <input 
+            data-testid = "search-input"
             type="text"
             placeholder="Search Restaraunt"
             className="flex-1 border-solid border border-amber-600 rounded-l-lg font-sans text-base py-2 px-4 text-slate-400"
@@ -60,7 +60,9 @@ const Body = () => {
             }}
           />
           <span>
-            <button className="border-solid border border-amber-600 rounded-r-lg font-sans text-base py-2 px-4 text-white bg-amber-600 text-center"
+            <button 
+            data-testid = "search-btn"
+            className="border-solid border border-amber-600 rounded-r-lg font-sans text-base py-2 px-4 text-white bg-amber-600 text-center"
             onClick={() => filterRestaurants(searchInput)}  
             >Search</button>
           </span>   
@@ -105,12 +107,13 @@ const Body = () => {
                   <br/>
                   <div>
                     <p className=" my-4 font-sans text-[1.4rem] font-bold">Restaurants near you</p>
-                    <div className="flex flex-wrap justify-between">
-                      {filteredRestaurants?.map((restraunt) => (
-                      <Link to={"/restaurant/"+restraunt.info.id} key={restraunt.info.id} className=" w-[22.5%] overflow-hidden mb-8">
-                      <RestrauntCard {...restraunt.info}/>
-                      </Link>            
-                      )
+                    <div data-testid="res-list" className="flex flex-wrap justify-between">
+                      {filteredRestaurants?.map((restraunt) => 
+                        (
+                          <Link to={"/restaurant/"+restraunt.info.id} key={restraunt.info.id} className=" w-[22.5%] overflow-hidden mb-8">
+                            <RestrauntCard {...restraunt.info}/>
+                          </Link>            
+                        )
                       )}
                     </div> 
                   </div>

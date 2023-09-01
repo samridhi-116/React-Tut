@@ -6,23 +6,23 @@ import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 // import UserContext from "../utils/userContext";
 import { useSelector } from "react-redux";
+import useOnline from "../utils/useOnline";
 // const loggedIn=()=>{
 //     return true;
 // };
 const Title = () => (
     <>
     <Link className=" w-1/5">
-        <img alt="Logo" src={logo} className="w-full"/>
+        <img data-testid="logo" alt="Logo" src={logo} className="w-full"/>
     </Link>
     </>
 );
 const Header = () => {
+    const isOnline = useOnline();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     // const {user} = useContext(UserContext);
 
     const cartItems = useSelector((store) => store.cart.items);
-    console.log(cartItems);
-
     return (
         <div className=" w-4/5 mx-auto flex flex-row justify-between">
             <Title />
@@ -31,7 +31,9 @@ const Header = () => {
                     <p><Link to = "/offer">Offers</Link></p>
                     <p><Link to = "/instamart">Instamart</Link></p>
                     <p><Link to = "/help">Help</Link></p>
-                    <p><Link to = "/cart">Cart-{cartItems.length}</Link></p>
+                    <Link to = "/cart"><p data-testid="cart-item">Cart-{cartItems.length}</p></Link>
+
+                    <p data-testid="online-status">{isOnline ? "🟢" : "🔴"}</p>
                     {
                         isLoggedIn ? 
                             <p>

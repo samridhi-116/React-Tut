@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
             <div className="Restaurant-Menu">
                 <p className="my-4 font-sans text-[1.2rem] font-bold">{myRestaurantMenu?.title}</p>
                 <br/>
-                <div>
+                <div data-testid="menu">
                     {(myRestaurantMenu?.itemCards)?.map((item) => (
                         <>
                         <div key={item?.card?.info?.id} 
@@ -69,6 +69,7 @@ const RestaurantMenu = () => {
                                 <img src={imgCDN+item?.card?.info?.imageId} 
                                 className=" w-[100px] h-[100px] rounded-lg object-cover"/>
                                 <button 
+                                data-testid="add-btn"
                                 onClick={()=>addFood({ item: item.card.info, restaurantInfo })}
                                 className="border-solid border-[1.5px] border-amber-600 rounded-lg font-sans text-sm py-1 px-2 text-amber-600 text-center mt-[-10px] bg-white">
                                 Add +
