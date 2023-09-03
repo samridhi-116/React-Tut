@@ -35,6 +35,8 @@ const Body = () => {
       infinite: true,
       slidesToShow: 2.1,
       slidesToScroll: 1,
+      accessibility:false,
+      arrows:false,
       lazyLoad: true,
       autoplay: true,
       autoplaySpeed: 5000,
@@ -51,7 +53,7 @@ const Body = () => {
             data-testid = "search-input"
             type="text"
             placeholder="Search Restaraunt"
-            className="flex-1 border-solid border border-amber-600 rounded-l-lg font-sans text-base py-2 px-4 text-slate-400"
+            className="flex-1 border-solid border border-orange-400 rounded-l-lg font-sans text-base py-2 px-4 text-slate-400"
             value= {searchInput}
             onChange={(e) => {
               //e.target.value => whatever value we input in our text field. 
@@ -62,7 +64,7 @@ const Body = () => {
           <span>
             <button 
             data-testid = "search-btn"
-            className="border-solid border border-amber-600 rounded-r-lg font-sans text-base py-2 px-4 text-white bg-amber-600 text-center"
+            className="border-solid border border-orange-400 rounded-r-lg font-sans text-base py-2 px-4 text-white bg-orange-400 text-center"
             onClick={() => filterRestaurants(searchInput)}  
             >Search</button>
           </span>   
@@ -78,11 +80,11 @@ const Body = () => {
                 </div>
               ) : (
                 <>
-                  <div className=" my-6">
+                  <div className=" mt-6 mb-4">
                     <div className="flex flex-row justify-between items-center">
                       <p className=" my-4 font-sans text-[1.4rem] font-bold">Best offers for you</p>
                       <div>
-                        <IconContext.Provider value={{ size: "1.5em", color: "#666666"}}>
+                        <IconContext.Provider value={{ size: "1.5em", color: "#8c8c8c"}}>
                         <button className="button" onClick={previous}>
                           <MdArrowCircleLeft/>
                         </button>
@@ -106,7 +108,7 @@ const Body = () => {
                   </div>
                   <br/>
                   <div>
-                    <p className=" my-4 font-sans text-[1.4rem] font-bold">Restaurants near you</p>
+                    <p className=" mb-4 font-sans text-[1.4rem] font-bold">Restaurants near you</p>
                     <div data-testid="res-list" className="flex flex-wrap justify-between">
                       {filteredRestaurants?.map((restraunt) => 
                         (

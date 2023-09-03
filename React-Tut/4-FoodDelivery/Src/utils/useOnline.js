@@ -7,7 +7,6 @@ const useOnline = () => {
     //aur yeh event kinti baar trigger hoga?? yeh event sirf ek baar trigger hoga... jbb app load ho rha hoga.. bs tbb.. 
     // and how to make it run just once?? obv using useEffect.. pass an empty dependency array 
     useEffect(()=>{ 
-
         const handleOnline = () =>{
             setIsOnline(true);
         }
