@@ -1,4 +1,4 @@
-import React, { Fragment, Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
@@ -11,7 +11,6 @@ import Profile from "./Components/Profile";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import {Shimmer} from "./Components/Shimmer";
-import SignIn from "./Components/SignIn";
 import UserContext from "./utils/userContext";
 import { Provider } from "react-redux";
 import store from "./utils/store";
@@ -82,10 +81,6 @@ const AppRouter = createBrowserRouter([
             {
                 path: '/restaurant/:resId',
                 element: <RestaurantMenu/>
-            },
-            {
-                path: '/login',
-                element: <SignIn/>
             },
         ]
     }

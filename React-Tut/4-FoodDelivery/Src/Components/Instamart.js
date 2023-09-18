@@ -5,7 +5,7 @@ const Section = ({title, description, isVisible, setIsVisible}) =>{
         <div className=" border border-black p-4 mb-4">
             <h2 className=" text-lg font-medium">{title}</h2>
             {
-            (isVisible == false)? 
+            (isVisible === false)? 
             <button 
             className="cursor-pointer underline"
             onClick={()=>{setIsVisible(true)}}

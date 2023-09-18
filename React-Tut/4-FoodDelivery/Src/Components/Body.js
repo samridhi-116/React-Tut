@@ -61,6 +61,7 @@ const Body = () => {
               setSearchInput(e.target.value);
             }}
           />
+          
           <span>
             <button 
             data-testid = "search-btn"
