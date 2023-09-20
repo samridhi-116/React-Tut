@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "this course is awesome",
   "scripts": {
-    "start": "parcel foodVilla.html",
-    "build": "parcel build foodVilla.html",
+    "start": "parcel tidbits.html",
+    "build": "parcel build tidbits.html",
     "test": "jest",
     "watch-test": "jest --watch"
   },

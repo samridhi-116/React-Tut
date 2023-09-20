@@ -90,9 +90,9 @@ const config = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(png|jpg)$" : "D:/React AS/React-Tut/4-FoodDelivery/Src/mocks/dummyLogo.js", 
+    "\\.(png|jpg)$" : "D:/React AS/React-Tut/TidBits/Src/mocks/dummyLogo.js", 
     //kind of regX, so, here we have to specify relative path.. from the root directory...
-    "\\.(css|less|scss)$": "D:/React AS/React-Tut/4-FoodDelivery/Src/mocks/styleMock.js",
+    "\\.(css|less|scss)$": "D:/React AS/React-Tut/TidBits/Src/mocks/styleMock.js",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -200,7 +200,7 @@ const config = {
   // Whether to use watchman for file crawling
   // watchman: true,
 
-  setupFilesAfterEnv: ['D:/React AS/React-Tut/4-FoodDelivery/Src/setupTests.js']
+  setupFilesAfterEnv: ['D:/React AS/React-Tut/TidBits/Src/setupTests.js']
 };
 
 module.exports = config;
